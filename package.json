@@ -1,0 +1,23 @@
+{
+  "name": "alldata-client-http",
+  "version": "0.1.0",
+  "description": "AllData HTTP client module",
+  "scripts": {
+    "test": "node scripts/test.js"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "nodeunit": "0.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alldata/alldata-client-http.git"
+  },
+  "keywords": [
+    "alldata",
+    "client",
+    "http"
+  ],
+  "author": "Tristan Slominski <tristan.slominski@gmail.com>",
+  "license": "MIT"
+}
