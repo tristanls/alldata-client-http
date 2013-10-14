@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:alldata/alldata-client-http.git"
+    "url": "git@github.com:tristanls/alldata-client-http.git"
   },
   "keywords": [
     "alldata",
