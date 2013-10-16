@@ -49,7 +49,7 @@ AllDataClient is an HTTP client for [AllData](https://github.com/tristanls/allda
   * [new AllDataClient(options)](#new-alldataclientoptions)
   * [allDataClient.put(event, \[callback\])](#alldataclientputevent-callback)
 
-#### new AllDataClient(options)
+### new AllDataClient(options)
 
   * `options`: _Object_
     * `hostname`: _String_ _(Default: `localhost`)_ HTTP hostname of the AllData server.
@@ -59,11 +59,10 @@ AllDataClient is an HTTP client for [AllData](https://github.com/tristanls/allda
 
 Creates a new instance of AllDataClient.
 
-#### allDataClient.put(event, [callback])
+### allDataClient.put(event, [callback])
 
   * `event`: _Object_ JavaScript object representing the event to store.
-  * `callback`: _Function_ _(Default: undefined)_ An optional callback to call
-          in case of success or failure.
+  * `callback`: _Function_ _(Default: undefined)_ `function (error) {}` An optional callback to call in case of success or failure.
 
 Attempts to store the `event` in AllData service via HTTP. If a `callback` is provided it will be called with an `Error` instance if an error occurs or with no parameters otherwise.
 

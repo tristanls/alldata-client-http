@@ -60,8 +60,8 @@ util.inherits(AllDataClient, events.EventEmitter);
 
 /*
   * `event`: _Object_ JavaScript object representing the event to store.
-  * `callback`: _Function_ _(Default: undefined)_ An optional callback to call
-          in case of success or failure.
+  * `callback`: _Function_ _(Default: undefined)_ `function (error) {}` An 
+          optional callback to call in case of success or failure.
 */
 AllDataClient.prototype.put = function put (event, callback) {
     var self = this;
@@ -70,8 +70,10 @@ AllDataClient.prototype.put = function put (event, callback) {
     if (callback) {
         req = http.request(self.reqOptions, function (res) {
             // 201 Created is success
-            if (res.statusCode == 201)
+            if (res.statusCode == 201) {
+                res.on('data', function () {}); // drain any data
                 return callback();
+            }
             
             var data = "";
             res.on('data', function (chunk) {

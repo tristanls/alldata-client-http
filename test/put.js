@@ -115,3 +115,23 @@ test["put() calls error callback if request encounters an error"] = function (te
         test.done();
     });  
 };
+
+test["put() calls success callback if provided when response is 201"] = function (test) {
+    test.expect(1);
+    var allDataClient = new AllDataClient({
+        hostname: 'localhost',
+        port: 8080
+    });
+    var server = http.createServer(function (req, res) {
+        res.statusCode = 201;
+        res.end();
+    });
+    server.listen(8080, 'localhost', function () {
+        allDataClient.put({foo: 'bar'}, function (error) {
+            test.ok(!error);
+            server.close(function () {
+                test.done();
+            });
+        });
+    });
+};
